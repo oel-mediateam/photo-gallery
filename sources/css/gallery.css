@@ -103,7 +103,7 @@
 	margin:0;
 	padding:0;
 	float:left;
-	background-image:url('https://media.uwex.edu/media/photo_gallery/sources/img/thumbframe.png');
+	background-image:url('https://media.uwex.edu/content/media/photo_gallery/sources/img/thumbframe.png');
 }
 #images a {
 	position:absolute;
@@ -169,7 +169,7 @@ filter: progid:dximagetransform.microsoft.gradient(enabled=false);
 	width:150px;
 	height:80px;
 	right:0px;
-	background-image:url('https://media.uwex.edu/media/photo_gallery/sources/img/spinner.gif');
+	background-image:url('https://media.uwex.edu/content/media/photo_gallery/sources/img/spinner.gif');
 	background-repeat:no-repeat;
 	background-position:center center;
 	z-index:10;

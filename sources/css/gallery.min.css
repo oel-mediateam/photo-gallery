@@ -16,14 +16,14 @@
 #timer{display:none;height:3px;width:100%;font-size:10px;line-height:14px;color:#999;background:#ccc}
 #timer .progress{display:block;height:3px;width:0;background:#007795}
 #images{float:left;clear:both;margin:4px 0 0}
-#images .thumb{position:relative;display:block;width:180px;height:104px;margin:0;padding:0;float:left;background:url(https://media.uwex.edu/media/photo_gallery/sources/img/thumbframe.png)}
+#images .thumb{position:relative;display:block;width:180px;height:104px;margin:0;padding:0;float:left;background:url(https://media.uwex.edu/content/media/photo_gallery/sources/img/thumbframe.png)}
 #images a{position:absolute;top:5px;right:15px;outline:none;position:absolute;top:5px;right:15px;outline:none}
 .fancybox-title h3{margin:7px 0 5px}
 .fancybox-title p{margin:5px 0}
 .controls{text-align:right;margin:0 0 6px}
 .autoOpenPlay{text-align:right;margin:4px 10px 6px 0}
 .btn{display:inline-block;padding:3px 9px;margin-bottom:0;font-size:12px;line-height:18px;text-shadow:0 -1px 0 rgba(0,0,0,.25);text-align:center;color:#fff!important;text-decoration:none!important;vertical-align:middle;cursor:pointer;background-color:#49afcd;background-image:-webkit-gradient(linear,0 0,0 100%,from(#5BC0DE),to(#2F96B4));background-image:-webkit-linear-gradient(top,#5bc0de,#2f96b4);background-image:-o-linear-gradient(top,#5bc0de,#2f96b4);background-image:linear-gradient(to bottom,#5bc0de,#2f96b4);background-image:-moz-linear-gradient(top,#5bc0de,#2f96b4);background-repeat:repeat-x;border:1px solid #BBB;border-color:rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);border-bottom-color:#a2a2a2;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;filter:progid:dximagetransform.microsoft.gradient(startColorstr="#ffffffff",endColorstr="#ffe6e6e6",GradientType=0);filter:progid:dximagetransform.microsoft.gradient(enabled=false);-webkit-box-shadow:inset 0 1px 0 hsla(0,0,100%,.2),0 1px 2px rgba(0,0,0,.05);-moz-box-shadow:inset 0 1px 0 hsla(0,0,100%,.2),0 1px 2px rgba(0,0,0,.05);box-shadow:inset 0 1px 0 hsla(0,0,100%,.2),0 1px 2px rgba(0,0,0,.05)}
-#images .preloader{position:absolute;width:150px;height:80px;right:0;z-index:10;background:url(https://media.uwex.edu/media/photo_gallery/sources/img/spinner.gif) no-repeat center center}
+#images .preloader{position:absolute;width:150px;height:80px;right:0;z-index:10;background:url(https://media.uwex.edu/content/media/photo_gallery/sources/img/spinner.gif) no-repeat center center}
 .tooltip{position:absolute;z-index:1030;display:block;visibility:visible;padding:5px;font-stretch:normal;text-decoration:none;color:#333;opacity:0;filter:alpha(opacity=0);font:300 11px/22px HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif}
 .tooltip.in{opacity:.8;filter:alpha(opacity=80)}
 .tooltip.top{margin-top:-3px}
