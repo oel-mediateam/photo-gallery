@@ -63,7 +63,7 @@ $.fn.preloader = function (options) {
     images = $.makeArray(images);
     var icon = jQuery("<img />", {
         id: 'loadingicon',
-        src: 'https://media.uwex.edu/media/photo_gallery/sources/img/spinner.gif'
+        src: 'https://media.uwex.edu/content/media/photo_gallery/sources/img/spinner.gif'
     }).hide().appendTo("body");
     timer = setInterval(function () {
         if (icon[0].complete == true) {
