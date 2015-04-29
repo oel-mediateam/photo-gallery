@@ -3,98 +3,101 @@
 
 	<!-- Gallery Setup -->
 	<setup>
-		
-		<!-- the page title of the gallery -->		
+
+		<!-- the page title of the gallery -->
+		<galleryTitle>Photo Gallery</galleryTitle>
+
 		<!-- the description of the gallery;
 			 use <![CDATA[ ... ]]> for HTML
 			 elements -->
-		
+        <galleryDescription>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</galleryDescription>
+
 		<!-- the type of image: jpg, gif, or png
 			 will defaulted to png if not specified -->
 		<imgFormat>jpg</imgFormat>
-		
+
 		<!-- the duration between
 			 each slide; will defaulted to 6 seconds if not specified -->
 		<slideDuration />
-		
+
 	</setup>
-	
+
 	<!-- ROW 1 -->
 	<image fileName="57594_defense">
 		<title>La Defense, Paris, France</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="2879772_sorbonne">
 		<title>La Sorbonne, Paris, France</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="4909422_LyonU">
 		<title>École Normale Supérieure de Lyon, Lyon, France</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="7107230_banquefrance">
 		<title>Banque de France, Paris, France</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="9792397_avignonU">
 		<title>Université  d’Avignon, Avignon, France</title>
 		<description></description>
 	</image>
-	
+
 	<!-- ROW 2 -->
 	<image fileName="17070678_MontpellierMedical">
 		<title>Université de Montpellier faculté de medicine, Montpellier, France</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="22087559_DefenseStatue">
 		<title>La Défense de Paris (statue), Paris, France</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="39104699_BeauxArtsParis">
 		<title>École Nationale Supérieure des Beaux-Arts, Paris, France</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="44971948_StrasbourgU">
 		<title>Université de Strasbourg faculté de droit, Strasbourg, France</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="3347956_LuxembourgBridge">
 		<title>Adolphe Bridge, Luxembourg City, Luxembourg</title>
 		<description></description>
 	</image>
-	
+
 	<!-- ROW 3 -->
 	<image fileName="24350266_LuxembourgOldTown">
 		<title>Luxembourg City, Luxembourg</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="28298001_QuebecPlaceRoyale">
 		<title>Place Royale, Québec City, Canada</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="28298266_QuebecHotel">
 		<title>Cap Diamant Hôtel, Québec City, Canada</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="2175325_QuebecRestaurant">
 		<title>Le Lapin Sauté (restaurant), Québec City, Canada</title>
 		<description></description>
 	</image>
-	
+
 	<image fileName="2271132_QuebecGate">
 		<title>Saint Louis Gate, Québec City, Canada</title>
 		<description></description>
-	</image>	
-	
+	</image>
+
 </gallery>

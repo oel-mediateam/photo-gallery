@@ -1,16 +1,36 @@
-// Programmer:	Ethan S. Lin
-// Program:		Photo Gallery
-// Date:		September 19th, 2012
-// Copyright:	UWEX-CEOEL (C) 2012
+/*
+ * Photo Gallery
+ *
+ * @author: Ethan Lin
+ * @url: https://github.com/oel-mediateam/photo-gallery
+ * @version: 1.0.1
+ * Released 9/19/2012
+ *
+ * @license: GNU GENERAL PUBLIC LICENSE v3
+ *
+    Storybook Plus is an web application that serves multimedia contents.
+    Copyright (C) 2013-2015  Ethan S. Lin, UWEX CEOEL Media Services
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
 
 var isPlaying = false; // flag whether the slideshow is playing or not
 var transTime;
 
 $(document).ready(function () {
 
-    var isMobile = sniffUA();
-	var holders = '';
-	
     // AJAX setup
     $.ajaxSetup({
 
@@ -50,11 +70,10 @@ $(document).ready(function () {
             IMAGE = $(xml).find('image'),
             galleryTitle = SETUP.find('galleryTitle').text(),
             galleryDesc = SETUP.find('galleryDescription').text(),
-            totalImages = IMAGE.length,
             imageType = (SETUP.find('imgFormat').text().length <= 0) ? 'png' : SETUP.find('imgFormat').text();
 
         transTime = (SETUP.find('slideDuration').text().length <= 0) ? 6 * 1000 : SETUP.find('slideDuration').text() * 1000;
-		
+
         // set the gallery title
         $('#gallery .title').html(galleryTitle);
 
@@ -66,26 +85,22 @@ $(document).ready(function () {
         }
 
         // loop through each topic node to get lesson topics
-		
+
 		$('#images').html('');
         IMAGE.each(function (i) {
             var fileName = $(this).attr('fileName');
             var imageTitle = $(this).find('title').text();
             var imageDesc = $(this).find('description').text();
-			
+
 			$('#images').append('<div class="thumb" id="thumb' + (i + 1) + '"><a class="fancybox" data-title-id="title-' + (i + 1) + '" rel="gallery" href="assets/images/' + fileName + '.' + imageType + '"> <img src="assets/thumbs/' + fileName + '.' + imageType + '" width="150" height="80" border="0" alt="' + imageTitle + '" /> </a></div><div id="title-' + (i + 1) + '" class="hidden" rel="popover"><h3>' + imageTitle + '</h3><div>' + imageDesc + '</div>');
 
         });
-			
+
         // preload the image
         $("#images").preloader();
 
-        // initialize pop over if it is not a mobile device
-        if (!isMobile) {
-
-            initPopOver();
-
-        }
+        // initialize pop over
+        initPopOver();
 
         initFancybox();
 
@@ -166,8 +181,6 @@ $(document).ready(function () {
             nextSpeed: 500,
             prevMethod: false,
             autoPlay: false,
-            /*minWidth: 600,
-            minHeight: 320,*/
             autoSize: true,
             autoResize: false,
             aspectRatio: false,
@@ -198,7 +211,7 @@ $(document).ready(function () {
             },
             afterClose: function () {
 
-                isNotPlaying();
+                isPlaying = false;
 
             }
         });
@@ -207,15 +220,13 @@ $(document).ready(function () {
         // auto open and play launcher (slideshow)
         $('.openPlay').bind('click', function () {
 
-            currentlyPlaying();
+            isPlaying = true;
 
             $.fancybox.open($(".fancybox"), {
                 nextMethod: 'resizeIn',
                 nextSpeed: 500,
                 prevMethod: false,
                 autoPlay: true,
-                /*minWidth: 600,
-                minHeight: 320,*/
                 autoSize: true,
                 autoResize: false,
                 aspectRatio: false,
@@ -246,7 +257,7 @@ $(document).ready(function () {
                 },
                 afterClose: function () {
 
-                    isNotPlaying();
+                    isPlaying = false;
 
                 }
 
@@ -259,7 +270,7 @@ $(document).ready(function () {
             var el, id = e.data('title-id'),
                 controls;
 
-            if (isPlaying == false) {
+            if (isPlaying === false) {
 
                 controls = 'Start Slideshow';
 
@@ -320,124 +331,61 @@ $(document).ready(function () {
 
     }
 
+    // function to play or stop slideshow
+    function playStop() {
 
-    // function that sniff the UA of the client
-    function sniffUA() {
+        if (isPlaying === false) {
 
-        var ua = navigator.userAgent, // hold the user agent
-            output = $('#gallery footer .device');
+            $(".playStop").html('Stop');
 
-        // structure to hold the available user agents
-        var checker = {
-            ios: ua.match(/(iPhone|iPod|iPad)/),
-            blackberry: ua.match(/BlackBerry/),
-            android: ua.match(/Android/),
-            browser: ua.match(/(Mozilla|Webkit|msie|Opera)/)
-        };
-
-        if (checker.android) {
-
-            output.append('an Android device.');
-
-            return true;
-
-        } else if (checker.ios) {
-
-            output.append('an iOS device.');
-
-            return true;
-
-        } else if (checker.blackberry) {
-
-            output.append('a Blackberry device.');
-
-            return true;
-
-        } else if (checker.browser) {
-
-            output.append('a desktop/laptop web browser.');
-
-            return false;
+            isPlaying = true;
+            startTimer(isPlaying);
 
         } else {
 
-            output.append('an unknown device.');
+            $(".playStop").html('Start Slideshow');
 
-            return true;
+            isPlaying = false;
+            startTimer(isPlaying);
 
         }
 
-    } // end sniffUA function
-
-}); // end document ready function
-
-// function to play or stop slideshow
-function playStop() {
-
-    if (isPlaying == false) {
-
-        $(".playStop").html('Stop');
-
-        currentlyPlaying();
-        startTimer(isPlaying);
-
-    } else {
-
-        $(".playStop").html('Start Slideshow');
-
-        isNotPlaying();
-        startTimer(isPlaying);
+        $.fancybox.play();
 
     }
 
-    $.fancybox.play();
+    function startTimer(isPlaying) {
 
-}
+        var bar = $('#timer .progress');
 
-// set is playing to false
-function isNotPlaying() {
+        if (isPlaying === true) {
 
-    isPlaying = false;
+            $('#timer').show();
 
-}
-
-// set is playing to true
-function currentlyPlaying() {
-
-    isPlaying = true;
-
-}
-
-function startTimer(isPlaying) {
-
-    var bar = $('#timer .progress');
-
-    if (isPlaying == true) {
-
-        $('#timer').show();
-
-        bar.animate({
-            width: '100%'
-        }, transTime, 'linear', function () {
-            $(this).animate({
-                opacity: 0
-            }, 1000, function () {
-                $(this).css({
-                    'width': '0%',
-                    'opacity': '1'
+            bar.animate({
+                width: '100%'
+            }, transTime, 'linear', function () {
+                $(this).animate({
+                    opacity: 0
+                }, 1000, function () {
+                    $(this).css({
+                        'width': '0%',
+                        'opacity': '1'
+                    });
                 });
             });
-        });
 
-    } else {
+        } else {
 
-        bar.stop().css({
-            'width': '0%',
-            'opacity': '1'
-        });
-		
-        $('#timer').hide();
+            bar.stop().css({
+                'width': '0%',
+                'opacity': '1'
+            });
+
+            $('#timer').hide();
+
+        }
 
     }
 
-}
+}); // end document ready function
