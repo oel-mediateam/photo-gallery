@@ -331,29 +331,6 @@ $(document).ready(function () {
 
     }
 
-    // function to play or stop slideshow
-    function playStop() {
-
-        if (isPlaying === false) {
-
-            $(".playStop").html('Stop');
-
-            isPlaying = true;
-            startTimer(isPlaying);
-
-        } else {
-
-            $(".playStop").html('Start Slideshow');
-
-            isPlaying = false;
-            startTimer(isPlaying);
-
-        }
-
-        $.fancybox.play();
-
-    }
-
     function startTimer(isPlaying) {
 
         var bar = $('#timer .progress');
@@ -389,3 +366,26 @@ $(document).ready(function () {
     }
 
 }); // end document ready function
+
+// function to play or stop slideshow
+function playStop() {
+
+    if (isPlaying === false) {
+
+        $(".playStop").html('Stop');
+
+        isPlaying = true;
+        startTimer(isPlaying);
+
+    } else {
+
+        $(".playStop").html('Start Slideshow');
+
+        isPlaying = false;
+        startTimer(isPlaying);
+
+    }
+
+    $.fancybox.play();
+
+}
