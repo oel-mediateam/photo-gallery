@@ -317,6 +317,7 @@ $fontFamily: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
 
 	display: inline-block;
 	padding: 3px 9px;
+	font-family: $fontFamily;
 	font-size: 12px;
 	line-height: 18px;
 	text-align: center;
@@ -355,13 +356,6 @@ $fontFamily: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", He
     p {
 
     	margin: 5px 0;
-
-    }
-
-    .controls {
-
-    	text-align: right;
-    	margin: 0;
 
     }
 

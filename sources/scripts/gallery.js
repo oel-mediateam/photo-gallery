@@ -26,10 +26,10 @@
  *
  */
 
-var isPlaying = false; // flag whether the slideshow is playing or not
-var transTime;
-
 $(document).ready(function () {
+
+    var isPlaying = false; // flag whether the slideshow is playing or not
+    var transTime;
 
     // AJAX setup
     $.ajaxSetup({
@@ -99,9 +99,10 @@ $(document).ready(function () {
         // preload the image
         $("#images").preloader();
 
-        // initialize pop over
+        // initialize popover
         initPopOver();
 
+        // initialize fancybox
         initFancybox();
 
     } // end setupXML function
@@ -182,9 +183,9 @@ $(document).ready(function () {
             prevMethod: false,
             autoPlay: false,
             autoSize: true,
-            autoResize: false,
-            aspectRatio: false,
-			fitToView: false,
+            autoResize: true,
+            aspectRatio: true,
+			fitToView: true,
             playSpeed: transTime,
             helpers: {
                 title: {
@@ -202,11 +203,13 @@ $(document).ready(function () {
 
             },
             beforeShow: function () {
+
                 $('#timer').hide();
+
             },
             afterShow: function () {
 
-                startTimer(isPlaying);
+
 
             },
             afterClose: function () {
@@ -214,8 +217,8 @@ $(document).ready(function () {
                 isPlaying = false;
 
             }
-        });
 
+        });
 
         // auto open and play launcher (slideshow)
         $('.openPlay').bind('click', function () {
@@ -228,9 +231,9 @@ $(document).ready(function () {
                 prevMethod: false,
                 autoPlay: true,
                 autoSize: true,
-                autoResize: false,
-                aspectRatio: false,
-				fitToView: false,
+                autoResize: true,
+                aspectRatio: true,
+				fitToView: true,
                 playSpeed: transTime,
                 helpers: {
                     title: {
@@ -252,7 +255,7 @@ $(document).ready(function () {
                 },
                 afterShow: function () {
 
-                    startTimer(isPlaying);
+                    startTimer();
 
                 },
                 afterClose: function () {
@@ -267,18 +270,7 @@ $(document).ready(function () {
 
         function addDescription(n, e) {
 
-            var el, id = e.data('title-id'),
-                controls;
-
-            if (isPlaying === false) {
-
-                controls = 'Start Slideshow';
-
-            } else {
-
-                controls = 'Stop';
-
-            }
+            var el, id = e.data('title-id');
 
             if (id) {
 
@@ -286,7 +278,7 @@ $(document).ready(function () {
 
                 if (el.length) {
 
-                    n.title = '<div class="controls"><a class="btn playStop" href="javascript:void(0);" onClick="playStop();">' + controls + '</a></div>' + el.html();
+                    n.title = el.html();
 
                 }
 
@@ -331,7 +323,7 @@ $(document).ready(function () {
 
     }
 
-    function startTimer(isPlaying) {
+    function startTimer() {
 
         var bar = $('#timer .progress');
 
@@ -366,26 +358,3 @@ $(document).ready(function () {
     }
 
 }); // end document ready function
-
-// function to play or stop slideshow
-function playStop() {
-
-    if (isPlaying === false) {
-
-        $(".playStop").html('Stop');
-
-        isPlaying = true;
-        startTimer(isPlaying);
-
-    } else {
-
-        $(".playStop").html('Start Slideshow');
-
-        isPlaying = false;
-        startTimer(isPlaying);
-
-    }
-
-    $.fancybox.play();
-
-}
