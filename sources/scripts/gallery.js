@@ -5,6 +5,7 @@
  * @url: https://github.com/oel-mediateam/photo-gallery
  * @version: 1.0.1
  * Released 9/19/2012
+ * Updated 5/1/2015
  *
  * @license: GNU GENERAL PUBLIC LICENSE v3
  *
@@ -88,7 +89,7 @@ $(document).ready(function () {
 
 		$('#images').html('');
         IMAGE.each(function (i) {
-            var fileName = $(this).attr('fileName');
+            var fileName = $(this).attr('fileName').toLowerCase();
             var imageTitle = $(this).find('title').text();
             var imageDesc = $(this).find('description').text();
 
