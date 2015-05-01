@@ -267,6 +267,8 @@ $(document).ready(function () {
 
             }); // end fancybox open
 
+            return false;
+
         }); // end slideshow click
 
         function addDescription(n, e) {
