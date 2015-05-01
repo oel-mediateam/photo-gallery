@@ -92,7 +92,7 @@ $(document).ready(function () {
             var imageTitle = $(this).find('title').text();
             var imageDesc = $(this).find('description').text();
 
-			$('#images').append('<div class="thumb" id="thumb' + (i + 1) + '"><a class="fancybox" data-title-id="title-' + (i + 1) + '" rel="gallery" href="assets/images/' + fileName + '.' + imageType + '"> <img src="assets/thumbs/' + fileName + '.' + imageType + '" width="150" height="80" border="0" alt="' + imageTitle + '" /> </a></div><div id="title-' + (i + 1) + '" class="hidden" rel="popover"><h3>' + imageTitle + '</h3><div>' + imageDesc + '</div>');
+			$('#images').append('<div class="thumb" id="thumb' + (i + 1) + '"><a class="fancybox" data-title-id="title-' + (i + 1) + '" rel="gallery" href="assets/images/' + fileName + '.' + imageType + '"><img src="assets/thumbs/' + fileName + '.' + imageType + '" width="150" height="80" border="0" alt="' + imageTitle + '" /></a></div><div id="title-' + (i + 1) + '" class="hidden" rel="popover"><h3>' + imageTitle + '</h3><div>' + imageDesc + '</div>');
 
         });
 
@@ -126,6 +126,7 @@ $(document).ready(function () {
             $('#thumb' + (i + 1)).popover({
                 placement: 'top',
                 trigger: 'hover',
+                template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
                 delay: {
                     show: 500,
                     hide: 0
