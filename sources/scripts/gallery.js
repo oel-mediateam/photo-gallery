@@ -69,21 +69,23 @@ $(document).ready(function () {
     function setupXML(xml) {
         var SETUP = $(xml).find('setup'),
             IMAGE = $(xml).find('image'),
-            galleryTitle = SETUP.find('galleryTitle').text(),
-            galleryDesc = SETUP.find('galleryDescription').text(),
+            //galleryTitle = SETUP.find('galleryTitle').text(),
+            //galleryDesc = SETUP.find('galleryDescription').text(),
             imageType = (SETUP.find('imgFormat').text().length <= 0) ? 'png' : SETUP.find('imgFormat').text();
 
         transTime = (SETUP.find('slideDuration').text().length <= 0) ? 6 * 1000 : SETUP.find('slideDuration').text() * 1000;
 
         // set the gallery title
-        $('#gallery .title').html(galleryTitle);
+        //$('#gallery .title').html(galleryTitle);
 
         // set the gallery description
+/*
         if (galleryDesc.length > 0) {
 
             $('#gallery .description').html(galleryDesc);
 
         }
+*/
 
         // loop through each topic node to get lesson topics
 
