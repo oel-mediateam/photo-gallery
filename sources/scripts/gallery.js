@@ -197,7 +197,7 @@ $(document).ready(function () {
                 },
                 overlay: {
                     css: {
-                        'background': 'rgba(250, 250, 250, 0.85)'
+                        'background': 'rgba(255, 255, 255, 0.80)'
                     }
                 }
             },
@@ -245,7 +245,7 @@ $(document).ready(function () {
                     },
                     overlay: {
                         css: {
-                            'background': 'rgba(250, 250, 250, 0.85)'
+                            'background': 'rgba(255, 255, 255, 0.80)'
                         }
                     }
                 },
